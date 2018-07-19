@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 9.99
+  description: MyText
+  category: MyString
+  credit: false
+  date: 2017-12-05 23:25:27
+  user: one
+
+two:
+  amount: 9.99
+  description: MyText
+  category: MyString
+  credit: false
+  date: 2017-12-05 23:25:27
+  user: two

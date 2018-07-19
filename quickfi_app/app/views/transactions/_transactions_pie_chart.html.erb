@@ -1,0 +1,4 @@
+<% if @cat_totals.blank? %>
+<% else %>
+  <%= image_tag(month_pie_chart(@cat_totals)) %>
+<% end %>

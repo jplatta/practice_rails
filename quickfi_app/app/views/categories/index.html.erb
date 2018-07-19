@@ -1,0 +1,13 @@
+<% provide(:title,"Transaction Categories") %>
+
+<h1>Your Transaction Categories</h1>
+
+<div>
+  <ul>
+    <% @categories.each do |c| %>
+      <li><%= c.name %>,
+          <%= link_to "Edit", edit_user_category_path(current_user, c) %>,
+          <%= link_to "Delete", [current_user, c], method: :delete, data: {confirm: "Are you sure?"} %></li>
+    <% end %>
+  </ul>
+</div>

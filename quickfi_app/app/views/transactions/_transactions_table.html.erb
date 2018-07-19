@@ -1,0 +1,25 @@
+<% if @transactions.blank? %>
+  <p><center><b>No Transactions</b></center></p>
+<% else %>
+  <%= will_paginate %>
+  <table style="width:100%">
+    <th>Amount</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Date</th>
+
+    <% @transactions.each do |t|%>
+      <tr>
+        <td><%= number_to_currency(t.amount) %></td>
+        <td><%= Category.find(t.category_id).name.upcase %></td>
+        <td><%= t.description %></td>
+        <td><%= t.date.strftime("%D") %></td>
+        <td>
+          <%= link_to "Edit", edit_user_transaction_path(current_user, t)%>
+          <%= link_to "Delete", [current_user,t], method: :delete, data: {confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate %>
+<% end %>

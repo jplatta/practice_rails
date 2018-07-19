@@ -1,0 +1,53 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Quick Fi", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Users", users_path %></li>
+          <li class="dropdown">
+            <a href='#' class="dropdown-toggle" data-toggle="dropdown">
+              Finances <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-submenu">
+                <a class="sub-dropdown" href="#">Transactions <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "View All", user_transactions_path(current_user) %></li>
+                  <li><%= link_to "By Month", month_path(Date.today.strftime("%m"),Date.today.strftime("%Y")) %></li>
+                  <li><%= link_to "Add Transaction", new_user_transaction_path(current_user) %></li>
+                  <li><%= link_to "Import File", import_path %></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a class="sub-dropdown" href="#">Categories <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "View All", user_categories_path(current_user) %></li>
+                  <li><%= link_to "Add Category", new_user_category_path(current_user) %></li>
+                </ul>
+              </li>
+              <li><%= link_to "Charts", charts_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href='#' class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Login", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

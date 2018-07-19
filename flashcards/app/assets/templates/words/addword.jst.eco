@@ -1,0 +1,15 @@
+<div id="new_word_form">
+  <% if @item: %>
+  <form id="new_word">
+    <label for="add_word">Word</label>
+    <input type="text" word="word" id="add_word">
+    <input type="submit" class="buttons" value="Add">
+  </form>
+  <% else: %>
+  <form id="new_def">
+    <label for="add_def">Define</label>
+    <input type="text" definition="definition" id="add_def">
+    <input type="submit" class="buttons" value="Save">
+  </form>
+  <% end %>
+</div>

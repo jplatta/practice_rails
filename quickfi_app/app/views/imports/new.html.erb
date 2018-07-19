@@ -1,0 +1,10 @@
+<% provide(:title,"Import Transactions") %>
+
+<h1>Import Transactions</h1>
+
+<div>
+  <%= form_for(:uploaded_file, multipart: true) do |f| %>
+    <%= f.file_field :uploaded_file, :style => "height: 50px; float:left;" %>
+    <%= f.submit "Import", :style => "height:25px; width: 65px; font-size:10pt;border-radius: 10px; float:right; background-color:white;"  %>
+  <% end %>
+</div>

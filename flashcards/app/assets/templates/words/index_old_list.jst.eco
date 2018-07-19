@@ -1,0 +1,16 @@
+<h1>GRE Words</h1>
+
+<div id="new_word">
+  <button id="add_button" type="button">Add Word</button>
+</div>
+
+<div id="word_list" style="width: 50%; margin-left:20px;">
+  <% for word in @words.models: %>
+    <div id="word" style="float:left; margin-right:10px;">
+      <b><%= word.get('word') %></b>
+    </div>
+    <div id="definition">
+      <%= word.get('definition') %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,31 @@
+<div id="current_path">
+  <% @c_path.each do |p| %>
+    <span><%= link_to "#{p}", svn_path(p) %></span> /
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 folders">
+    <ul id="folders_list">
+      <% @list.each do |line| %>
+        <% if line.strip.end_with?("/") %>
+          <li><%= link_to "#{line.strip[0,line.strip.length-1]}", svn_path(line.strip[0,line.strip.length-1]) %></li>
+        <% else %>
+          <li><%= line.strip %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-sm-6">
+      <% @log_msgs.each do |m| %>
+        <div id="commit_box">
+          <h3 id="commit_title">Last Commit</h3>
+          <p id="commit_msg">Revision: <%= m.rev_num %></p>
+          <p id="commit_msg">Committed by: <%= m.rev_dev %></p>
+          <p id="commit_msg">Date: <%= m.rev_time %></p>
+          <p id="commit_msg">Commit Message: <%= m.rev_msg %></p>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>

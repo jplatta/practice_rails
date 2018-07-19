@@ -1,0 +1,8 @@
+<div class="btn-group">
+  <div class="col-md-6">
+    <%= button_to "Prev Month", month_path(prev_mth(@date),prev_yr(@date)), method: :get %>
+  </div>
+  <div class="col-md-6">
+    <%= button_to "Next Month", month_path(next_mth(@date),next_yr(@date)), method: :get %>
+  </div>
+</div>

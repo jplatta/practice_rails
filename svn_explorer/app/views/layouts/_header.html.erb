@@ -1,0 +1,25 @@
+<header class="navbar navbar-fixed-top">
+  <div class="container">
+    <%= link_to "SVN Explorer", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path, class: 'header-links' %></li>
+        <li><%= link_to "About", about_path, class: 'header-links' %></li>
+        <% if logged_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle header-links" data-toggle="dropdown">
+              Options <b class="caret"></b>
+            </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Repo", svn_path(start_path), class: 'header-sub-links' %></li>
+                <li><%= link_to "Logout", logout_path, method: "delete", class: 'header-sub-links' %></li>
+              </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Login", login_path, class: 'header-links' %></li>
+        <% end %>
+
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+<% provide(:title, "Login") %>
+
+<h1>Login</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :repo_url, class: 'login-labels' %>
+      <%= f.url_field :repo_url, class: 'form-control' %>
+
+      <%= f.label :name, class: 'login-labels' %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :password, class: 'login-labels' %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Login", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<% provide(:title, "User")%>
+
+<div = "container">
+  <ul>
+    <% @output.each do |l| %>
+      <li><%= l.to_s %></li>
+    <% end %>
+  </ul>
+</div>

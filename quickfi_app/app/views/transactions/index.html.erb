@@ -1,0 +1,9 @@
+<h1>Transactions</h1>
+
+<%= will_paginate %>
+<ul>
+<% @transactions.each do |t| %>
+  <li><%= t.date %>, <%= t.description %>, <%= t.id %>, <%= Category.find(t.category_id).name.upcase %>, <%= t.amount %>, <%= link_to "Edit", edit_user_transaction_path(current_user,t) %></li>
+<% end %>
+</ul>
+<%= will_paginate %>

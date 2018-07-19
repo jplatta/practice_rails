@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render 'layouts/rails_default' %>
+    <%= render 'layouts/shim' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <% flash.each do |mess_type, message| %>
+        <div class="alert alert-<%= mess_type %>"><%= message %></div>
+      <% end %>
+
+      <%= yield %>
+
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+        $('.dropdown-submenu a.sub-dropdown').on("click", function(e){
+          $(this).next('ul').toggle();
+          e.stopPropagation();
+          e.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>

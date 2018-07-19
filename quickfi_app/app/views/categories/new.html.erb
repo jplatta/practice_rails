@@ -1,0 +1,16 @@
+<% provide(:title, "Create Category") %>
+
+<h1>New Transaction Category</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@category, url: user_categories_path) do |f| %>
+      <%= render 'shared/category_error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.submit "Add Category", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

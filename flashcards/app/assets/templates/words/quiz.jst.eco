@@ -1,0 +1,18 @@
+<div id="quiz_display">
+
+  <div id="flashcard">
+    <% if @showing == 'word': %>
+      <b style="color: #808080;"><%= @word.get('word') %></b>
+    <% else: %>
+      <i><%= @word.get('definition') %></i>
+    <% end %>
+  </div>
+
+  <div class="btn-group">
+    <button id="prev" class="buttons">Prev</button>
+    <button id="flip" class="buttons">Flip</button>
+    <button id="next" class="buttons">Next</button>
+    <button id="shuffle" class="buttons">Restart</button>
+  </div>
+
+</div>

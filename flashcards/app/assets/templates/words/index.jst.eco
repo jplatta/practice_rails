@@ -1,0 +1,20 @@
+<div class="topnav" id="nav_bar" style="margin-bottom:20px;" >
+  <label id="title"><b>GRE Words</b></label>
+
+  <div id="links" style="float:right;">
+    <button id="nav_quiz" class="tablink" style="margin-right:20px;">Quiz</button>
+    <button id="nav_words" class="tablink" style="margin-right:20px;">Words</button>
+  </div>
+</div>
+
+<div id="word_list">
+
+  <div id="new_word_form_container">
+  </div>
+
+  <div id="words">
+  </div>
+</div>
+
+<div id="quiz">
+</div>
